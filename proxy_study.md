@@ -109,8 +109,9 @@ choose a hostname，就是为这个远程服务器起一个主机名，随便起
 
 Create!
 下面贴图：
+
 ![avatar](data/create1.png)
-![avatar](data/creatfix1.png)
+![avatar](data/creat2fix1.png)
 
 ok,创建好了，好了之后点击上面的Droplets是这个页面：
 ![avatar](data/createdone1.png)
