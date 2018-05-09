@@ -1,4 +1,4 @@
-### 利用好学生资源，从零开始自己搭梯子，看油管,查资料。
+##### 利用好资源，从零开始自己搭梯子，看查资料，看油管
 其实很多软件，公司，都为学生建立了各种福利的，这个教程就是免费（有信用卡，或者paypal），或者花费$5，
 来自己搭建一个翻墙的梯子。
 话不多说，本教程用来记录搭梯子过程，都是从网上查出来的步骤，这里只是用来记录整合，主要分为步骤：
@@ -11,7 +11,7 @@
 * 嫌慢？开启谷歌BBR优化
 * 享受YouTube 至少720p无卡顿视频
 
-#### 第一阶段：申请GitHub学生认证
+##### 第一阶段：申请GitHub学生认证
 
 1.首先申请一个github账号，网址：https://github.com/，直接在首页sign up for github.
 如果实在有不会的，问问周围的同xiao。
@@ -28,7 +28,7 @@
 
 提交之后就等着吧，或许1天到两天就能接到申请了，happy。
 
-#### 第二阶段：注册Digital Ocean账号
+##### 第二阶段：注册Digital Ocean账号
 
 1.直接上网址：https://www.digitalocean.com/，可能有点慢，稍作等待。
 打开后是这个样子：
@@ -51,14 +51,14 @@
 登陆PayPal账号，这个界面其实就是和用支付宝的登陆买东西一样的，登陆，消费，就是这么粗暴。
 ![avatar](data/dig7paypal1.png)
 
-#### 第三阶段，在digitalocean上使用github送的福利，学生优惠券码
+##### 第三阶段，在digitalocean上使用github送的福利，学生优惠券码
 
 这个券原来100刀呢，现在只有50刀了。
 
 1.直接上图！还是打开githubEducation网站：https://education.github.com/
-![avatar](data/getpack.png)
+![avatar](data/getpack1.png)
 
-2.打开后找到digitalocean这一栏，是酱紫滴：
+2.打开后找到digitalocean这一栏，是酱紫滴：   
 ![avatar](data/digocean1.png)
 
 >上面有一个优惠券码
@@ -68,9 +68,9 @@
 进去之后右边有个头像的小人人，点开菜单，有Settings，我记得是在Billing这一栏，
 在这里面找到promo code（因为我的填写完了，现在去截图，发现找不到了），然后填写你在github上复制的优惠码
 爽歪歪，50美元账户到手。
-下面将要真正的开始搭建服务期之旅！！！
+下面将要真正的开始搭建服务器之旅！
 
-#### 第三阶段：搭建远程服务器
+#### 第四阶段：搭建远程服务器
 
 1.登陆digitalocean，找到右边头像小人人左边的Create。没错，就是点它。然后选择Droplets
 
@@ -110,11 +110,13 @@ choose a hostname，就是为这个远程服务器起一个主机名，随便起
 Create!
 下面贴图：
 
-![avatar](data/create1.png)
+![avatar](data/createdone1.png)
 ![avatar](data/creat2fix1.png)
 
 ok,创建好了，好了之后点击上面的Droplets是这个页面：
+
 ![avatar](data/createdone1.png)
+
 然后重置你的Root密码，就是点开上面的图片你的主机名，之后点击左侧的Access，右边有“Reset root password”
 之后就会通过邮件的方式发送到你注册的那个邮箱，接着，你就可以通过下面命令进行远程登陆：
 ```
@@ -122,7 +124,7 @@ ssh root@ip  # 这个ip就是你创建好远程主机之后分配给你的ip，�
 ```
 我记得第一次登陆的时候我根据重置的密码重新修改了密码，现在具体的步骤给忘了，尴尬。。。 大家自己摸索一下。
 
-#### 第四阶段：安装配置ShadowSocks
+##### 第五阶段：安装配置ShadowSocks
 
 1.上面你已经连接到主机页面了，没连接的话，使用下面命令
 ```
@@ -189,7 +191,7 @@ ok,这样就行了，下面就可以开始配置你自己的电脑用来连接�
 ssserver -c /etc/shadowsocks.json -d stop
 ```
 
-#### 第五阶段：配置自己电脑的shadowsocks
+##### 第六阶段：配置自己电脑的shadowsocks
 
 1.这里先教linux的吧   
 1.1 我用的是Ubuntu16.04，不想通过命令设置了，就直接安装个客户端吧
@@ -201,6 +203,7 @@ sudo apt-get install shadowsocks-qt5
 ```
 1.2 安装完之后打开客户端，直接在窗口下面空白地方右键Add-\>manually
 接着，再上图：
+
 ![avatar](data/shsk1.png)
 
 1.3 按照以上进行设置后，点击connect,还有，还有就是配置浏览器，我用的是chrome，需要给chrome安装
@@ -231,7 +234,7 @@ pass  # 这里留作放链接
 
 以上，应该能正确上网了，但是还达不到youtube 720p甚至1080p无卡顿，那么就来吧，继续配置远程服务器
 
-#### 第六阶段：开启谷歌BBR优化
+#### 第七阶段：开启谷歌BBR优化
 
 1.登陆到远程服务器
 ```
@@ -261,6 +264,6 @@ sysctl -p
 sysctl net.ipv4.tcp_available_congestion_control  # 如果结果中有 bbr, 则证明你的内核已开启bbr
 lsmod | grep bbr  # 如果看到有 tcp_bbr模块，即说明bbr已启动。
 ```
-ok，所有的都结束了，至少我试了试720p确实不卡，不知道是不是因为我是半夜12点多试验的，到现在终于写的差不多，溜了溜了。
+ok，所有的都结束了，至少我试了试720p确实不卡，不知道是不是因为我是半夜12点多试验的，现在已经4点多了，溜了溜了。
 
 以上均为从网上查找的内容，只是进行了整理，仅供自己记录和周围同学学习练习。
