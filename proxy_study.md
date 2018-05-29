@@ -56,9 +56,11 @@
 这个券原来100刀呢，现在只有50刀了。
 
 1.直接上图！还是打开githubEducation网站：https://education.github.com/
+
 ![avatar](data/getpack1.png)
 
-2.打开后找到digitalocean这一栏，是酱紫滴：   
+2.打开后找到digitalocean这一栏，是酱紫滴：
+
 ![avatar](data/digocean1.png)
 
 >上面有一个优惠券码
